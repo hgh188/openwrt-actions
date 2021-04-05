@@ -74,10 +74,6 @@ jobs:
             cp -rf ${{ github.workspace }}/config/${{ github.event.inputs.target }}/files ${{ github.workspace }}/openwrt/files
           fi
 
-          if [ -n "$(ls -A "${{ github.workspace }}/config/${{ github.event.inputs.target }}/diy" 2>/dev/null)" ]; then
-            cp -Rf ${{ github.workspace }}/config/${{ github.event.inputs.target }}/diy/* ${{ github.workspace }}/openwrt/
-          fi
-
           if [ -f ${{ github.workspace }}/config/${{ github.event.inputs.target }}/diy2.sh ]; then
             chmod +x ${{ github.workspace }}/config/${{ github.event.inputs.target }}/diy2.sh
             /bin/bash ${{ github.workspace }}/config/${{ github.event.inputs.target }}/diy2.sh
